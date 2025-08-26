@@ -41,91 +41,17 @@ langDisableOpt1="(1) Disable HIDPI on this monitor"
 langDisableOpt2="(2) Reset all settings to macOS default"
 
 langChooseRes="resolution config"
-langChooseResOp1="(1) 1920x1080 Display"
-langChooseResOp2="(2) 1920x1080 Display (use 1424x802, fix underscaled after sleep)"
-langChooseResOp3="(3) 1920x1200 Display"
-langChooseResOp4="(4) 2560x1440 Display"
-langChooseResOp5="(5) 3000x2000 Display"
-langChooseResOp6="(6) 3440x1440 Display"
-langChooseResOpCustom="(7) Manual input resolution"
+langChooseResOp1="(1) 1920x1080 (16:9)"
+langChooseResOp2="(2) 1920x1080 (use 1424x802, fix underscaled after sleep)"
+langChooseResOp3="(3) 1920x1200 (8:5)"
+langChooseResOp4="(4) 2560x1440 (16:9)"
+langChooseResOp5="(5) 3000x2000 (3:2)"
+langChooseResOp6="(6) 3440x1440 (43:18)"
+langChooseResOp7="(7) 1920x1280 (3:2)"
+langChooseResOpCustom="(7) Custom Resolut"ion
 
 langNoMonitFound="No monitors were found. Exiting..."
 langMonitVIDPID="Your monitor VID:PID:"
-if [[ "${systemLanguage}" == "zh_CN" ]]; then
-    langDisplay="显示器"
-    langMonitors="显示器"
-    langIndex="序号"
-    langVendorID="供应商ID"
-    langProductID="产品ID"
-    langMonitorName="显示器名称"
-    langChooseDis="选择显示器"
-    langInputChoice="输入你的选择"
-    langEnterError="输入错误，再见了您嘞！"
-    langBackingUp="正在备份(怎么还原请看说明)..."
-    langEnabled="开启成功，重启生效"
-    langDisabled="关闭成功，重启生效"
-    langEnabledLog="首次重启开机logo会变得巨大，之后就不会了"
-    langCustomRes="输入想要开启的 HIDPI 分辨率，用空格隔开，就像这样：1680x945 1600x900 1440x810"
-
-    langChooseIcon="选择显示器ICON"
-    langNotChange="保持原样"
-
-    langEnableHIDPI="(%d) 开启HIDPI"
-    langEnableHIDPIEDID="(%d) 开启HIDPI(同时注入EDID)"
-    langDisableHIDPI="(%d) 关闭HIDPI"
-
-    langDisableOpt1="(1) 在此显示器上禁用 HIDPI"
-    langDisableOpt2="(2) 还原所有设置至 macOS 默认"
-
-    langChooseRes="选择分辨率配置"
-    langChooseResOp1="(1) 1920x1080 显示屏"
-    langChooseResOp2="(2) 1920x1080 显示屏 (使用 1424x802 分辨率，修复睡眠唤醒后的屏幕缩小问题)"
-    langChooseResOp3="(3) 1920x1200 显示屏"
-    langChooseResOp4="(4) 2560x1440 显示屏"
-    langChooseResOp5="(5) 3000x2000 显示屏"
-    langChooseResOp6="(6) 3440x1440 显示屏"
-    langChooseResOpCustom="(7) 手动输入分辨率"
-
-    langNoMonitFound="没有找到监视器。 退出..."
-    langMonitVIDPID="您的显示器 供应商ID:产品ID:"
-elif [[ "${systemLanguage}" == "uk_UA" ]]; then
-    langDisplay="Монітор"
-    langMonitors="Монітор"
-    langIndex="Номер"
-    langVendorID="ID Виробника"
-    langProductID="ID Продукту"
-    langMonitorName="Імʼя пристрою"
-    langChooseDis="Вибери монітор"
-    langInputChoice="Введи свій вибір"
-    langEnterError="Помилка вводу, бувай..."
-    langBackingUp="Зберігаю..."
-    langEnabled="Увімкнено! Перезавантаж компʼютер."
-    langDisabled="Вимкнено. Перезавантаж компʼютер."
-    langEnabledLog="Спочатку логотип виглядатиме великим, далі все виправиться"
-    langCustomRes="Введи роздільну здатність HiDPI розділену комами, як на цьому прикладі: 1680x945 1600x900 1440x810"
-
-    langChooseIcon="Вибери піктограму"
-    langNotChange="Не змінювати піктограму"
-
-    langEnableHIDPI="(%d) Увімкнути HIDPI"
-    langEnableHIDPIEDID="(%d) Увімкнути HIDPI (спробувати увімкнути з використанням EDID)"
-    langDisableHIDPI="(%d) Вимкнути HIDPI"
-
-    langDisableOpt1="(1) Вимкнути HIDPI для цього монітору"
-    langDisableOpt2="(2) Відновити заводські налаштування macOS"
-
-    langChooseRes="Налаштувати роздільну здатність"
-    langChooseResOp1="(1) 1920x1080 монітор"
-    langChooseResOp2="(2) 1920x1080 монітор (використовувати 1424x802, виправлення заниженої роздільної здатності після сну)"
-    langChooseResOp3="(3) 1920x1200 монітор"
-    langChooseResOp4="(4) 2560x1440 монітор"
-    langChooseResOp5="(5) 3000x2000 монітор"
-    langChooseResOp6="(6) 3440x1440 монітор"
-    langChooseResOpCustom="(7) Ввести роздільну здатність вручну"
-
-    langNoMonitFound="Моніторів не знайдено. Завершую роботу..."
-    langMonitVIDPID="ID Виробника:ID пристрою твого монітора:"
-fi
 
 function get_edid() {
     local index=0
@@ -631,6 +557,7 @@ CCC
     echo ${langChooseResOp4}
     echo ${langChooseResOp5}
     echo ${langChooseResOp6}
+    echo ${langChooseResOp7}
     echo ${langChooseResOpCustom}
     echo ""
 
