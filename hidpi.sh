@@ -48,7 +48,7 @@ langChooseResOp4="(4) 2560x1440 (16:9)"
 langChooseResOp5="(5) 3000x2000 (3:2)"
 langChooseResOp6="(6) 3440x1440 (43:18)"
 langChooseResOp7="(7) 1920x1280 (3:2)"
-langChooseResOpCustom="(7) Custom Resolut"ion
+langChooseResOpCustom="(8) Custom Resolution"
 
 langNoMonitFound="No monitors were found. Exiting..."
 langMonitVIDPID="Your monitor VID:PID:"
@@ -561,6 +561,7 @@ CCC
     echo ${langChooseResOpCustom}
     echo ""
 
+
     read -p "${langInputChoice}: " res
     case ${res} in
     1)
@@ -605,6 +606,12 @@ CCC
         create_res_4 2752x1152 2580x1080 2365x990 1935x810 1720x720 1290x540
         ;;
     7)
+        create_res_1 1920x1280 1680x1120 1440x960 1280x854 1024x683
+        create_res_2 1280x854 1152x768 1024x683 960x640 800x533 640x427
+        create_res_3 840x560 800x533 720x480 640x427 576x384 512x341 420x280 400x267 320x213
+        create_res_4 1920x1280 1680x1120 1440x960 1280x854 1024x683 960x640 840x560 800x533 640x427
+        ;;
+    8)
         custom_res
         create_res_2 1360x765 1280x800 1280x720 960x600 960x540 640x360
         create_res_3 840x472 800x450 720x405 640x360 576x324 512x288 420x234 400x225 320x180
